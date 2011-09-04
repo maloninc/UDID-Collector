@@ -1,0 +1,38 @@
+<html>
+<head>
+  <style>
+    table   {
+      border-collapse: collapse;  border-spacing: 0;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    th, td  {
+      padding: 10px 20px;
+      color: #1D5C79;
+    }
+    th {
+      border-bottom: 2px solid #1D5C79;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>UDID Collector</h1>
+
+<table>
+  <tr><th>Time</th><th>UDID</th><th>IMEI</th></tr>
+  <% @table.each do |data| %>
+    <tr>
+      <td><%= data['timestamp'] %></td>
+      <td><%= data['udid'] %></td>
+      <td><%= data['imei'] %></td>
+    </tr>
+  <% end %>
+</table>
+
+<input type=button value="Download CSV" onclick="location.href='/download';" />
+<input type=button value="Clear Database" onclick="location.href='/clear';" />
+
+</body>
+</html>
