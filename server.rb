@@ -35,7 +35,7 @@ trap("INT"){ server.shutdown }
 server.mount_proc("/") { |req, res|
   res['Content-Type'] = "text/html"
   user_agent = req.header["user-agent"][0]
-  if user_agent =~ /iPhone/i or user_agent =~ /iPad/i
+  if user_agent =~ /iPhone/i or user_agent =~ /iPad/i or user_agent =~ /iPod/i
     res.body = <<WELCOME_MESSAGE
     <style>
       body { margin:40px 40px;font-family:Helvetica;}
